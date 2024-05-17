@@ -10,12 +10,12 @@ variable "pubsub2" {
 
 variable "eksIAMRole" {
   type = string
-  default = "group2EKSCluster"
+  default = "group4EKSCluster"
 }
 
 variable "EKSClusterName" {
   type = string
-  default = "group2EKS"
+  default = "group4EKS"
 }
 
 variable "k8sVersion" {
@@ -25,7 +25,7 @@ variable "k8sVersion" {
 
 variable "workerNodeIAM" {
   type = string
-  default = "group2WorkerNodes"
+  default = "group4WorkerNodes"
 }
 
 variable "max_size" {
