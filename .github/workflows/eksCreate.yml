@@ -37,7 +37,7 @@ jobs:
 
     - name: Terraform Init
       working-directory: cluster/
-      run: terraform init -backend-config "bucket=group4s3"  -backend-config "key=eks-terraform.tfstate"
+      run: terraform init -backend-config "bucket=group4s3"  #-backend-config "key=eks-terraform.tfstate"
            
     - name: Terraform Format
       working-directory: cluster/
