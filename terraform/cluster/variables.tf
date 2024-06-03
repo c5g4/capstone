@@ -15,12 +15,12 @@ variable "eksIAMRole" {
 
 variable "EKSClusterName" {
   type = string
-  default = "group4EKS"
+  default = "group4prodEKS"
 }
 
 variable "k8sVersion" {
   type = string
-  default = "1.26"
+  default = "1.28"
 }
 
 variable "workerNodeIAM" {
@@ -44,7 +44,7 @@ variable "min_size" {
 
 variable "instanceType" {
   type = list
-  default = ["t2.micro"]
+  default = ["t3.medium"] #["t2.micro"]
 }
 
 variable "environment" {
