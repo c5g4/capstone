@@ -1,4 +1,4 @@
-name: 'EKS Cluster Deployment'
+name: 'EKS Cluster Deployment-Prod'
 
 on:
   workflow_dispatch:
