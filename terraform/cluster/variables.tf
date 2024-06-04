@@ -17,7 +17,7 @@ variable "eksIAMRole" {
 
 variable "EKSClusterName" {
   type = string
-  default = "group4prodEKS"
+  default = "group4devEKS"
 }
 
 variable "k8sVersion" {
