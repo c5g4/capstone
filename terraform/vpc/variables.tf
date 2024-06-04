@@ -1,4 +1,4 @@
 variable "environment" {
   type = string
-  default = "prod"
+  default = "group4-dev"
 }
