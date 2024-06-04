@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: retailstoreapp
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:c5g4/retail-config.git
+    targetRevision: HEAD
+    path: helm/retailapp
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: retail-store
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
