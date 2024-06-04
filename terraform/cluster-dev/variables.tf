@@ -1,18 +1,16 @@
 variable "pubsub1" {
   type = string
-#   default = "subnet-0400156864bc4188a" # Prod
   default = "subnet-0130d4d2ec16d451b" # Dev
 }
 
 variable "pubsub2" {
   type = string
-#   default = "subnet-015cf8d44040cb38b" # Prod
   default = "subnet-05b179fe5f65bf08a" # Dev
 }
 
 variable "eksIAMRole" {
   type = string
-  default = "group4EKSCluster"
+  default = "group4EKSCluster-dev"
 }
 
 variable "EKSClusterName" {
