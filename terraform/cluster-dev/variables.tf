@@ -25,7 +25,7 @@ variable "k8sVersion" {
 
 variable "workerNodeIAM" {
   type = string
-  default = "group4WorkerNodes"
+  default = "group4WorkerNodes-dev"
 }
 
 variable "max_size" {
@@ -49,5 +49,5 @@ variable "instanceType" {
 
 variable "environment" {
   type = string
-  default = "prod"
+  default = "dev"
 }
