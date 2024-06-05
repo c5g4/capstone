@@ -5,7 +5,7 @@ on:
       
 env:
   EKS_REGION: "us-east-1"
-  EKS_CLUSTER: "group4devEKS"
+  EKS_CLUSTER: "group4prodEKS"
 
 jobs:
   deploy:

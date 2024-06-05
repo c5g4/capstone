@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
     path: helm/retailapp
   destination:
-    server: https://kubernetes.default.svc
+    server: https://3D180FD46D49B413D94673E229946DB6.gr7.us-east-1.eks.amazonaws.com
     namespace: retail-store
   syncPolicy:
     automated: {}
