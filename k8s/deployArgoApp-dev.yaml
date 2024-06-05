@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: git@github.com:c5g4/retail-config.git
-    targetRevision: HEAD
+    targetRevision: Dev
     path: helm/retailapp
   destination:
     server: https://3D180FD46D49B413D94673E229946DB6.gr7.us-east-1.eks.amazonaws.com
