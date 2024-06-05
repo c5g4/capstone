@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: git@github.com:c5g4/retail-config.git
-    targetRevision: HEAD
+    targetRevision: Release #HEAD
     path: helm/retailapp
   destination:
     server: https://kubernetes.default.svc
