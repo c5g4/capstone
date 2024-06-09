@@ -47,5 +47,5 @@ jobs:
       - name: Deploy Retail app
         # run: kubectl apply -f https://raw.githubusercontent.com/aws-containers/retail-store-sample-app/main/dist/kubernetes/deploy.yaml
         run: |
-        kubectl apply -f k8s/deploy-other.yaml
-        kubectl apply -f k8s/deploy-our-ui.yaml
+          kubectl apply -f k8s/deploy-other.yaml
+          kubectl apply -f k8s/deploy-our-ui.yaml
