@@ -60,6 +60,13 @@ The application has been deliberately over-engineered to generate multiple de-co
 | ![assets workflow](https://github.com/aws-containers/retail-store-sample-app/actions/workflows/ci-assets.yml/badge.svg)  | Nginx    | [Link](https://gallery.ecr.aws/aws-containers/retail-store-sample-assets)   | Serves static assets like images related to the product catalog             |
 
 
+UI Architecture:
+
+![Architecture](/docs/images/catalog-microservice-001.png)
+
+Overall Architecture:
+
+![Architecture](/docs/images/catalog-microservice-002.png)
 
 
 
