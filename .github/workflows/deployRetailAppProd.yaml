@@ -1,4 +1,4 @@
-name: 'Deploy ArgoCD App'
+name: 'Deploy Retail App'
 
 on:
   workflow_dispatch:
