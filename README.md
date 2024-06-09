@@ -15,6 +15,12 @@ Additional features are added into the sample application for use cases
 3. UI module development is done via CI pipeline by GitHub Action (https://github.com/c5g4/retail-store-app-ui.git)
 4. UI module deployment is done via CD pipeline by ArgoCD (https://github.com/c5g4/retail-config.git) into AWS ECR (Amazon Elastic Container Registry)
 
+GitHub:
+![Screenshot](/docs/images/MainRepo001.png)
+
+ECR:
+![Screenshot](/docs/images/ECR001.png)
+
 ### Use Case 2 - Site Reliability Engineering (SRE)
 5. Splunk monitoring is implemented.
 
