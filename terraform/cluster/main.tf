@@ -52,11 +52,33 @@ resource "aws_eks_cluster" "eks" {
     subnet_ids = [var.pubsub1, var.pubsub2]
   }
 
+  // By Jeremy 2024-06-09
+  access_config {
+    authentication_mode                         = "API_AND_CONFIG_MAP"
+    bootstrap_cluster_creator_admin_permissions = true
+  }
+
   depends_on = [
     aws_iam_role.eks-iam-role,
   ]
 }
 
+// By Jeremy 2024-06-09
+resource "aws_eks_access_entry" "cmcheung001" {
+  cluster_name      = aws_eks_cluster.eks.name
+  principal_arn     = "arn:aws:iam::255945442255:user/cmcheung001"
+  type              = "STANDARD"
+}
+
+resource "aws_eks_access_policy_association" "cmcheung001" {
+  cluster_name      = aws_eks_cluster.eks.name
+  principal_arn     = "arn:aws:iam::255945442255:user/cmcheung001"
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+
+  access_scope {
+    type       = "cluster"
+  }
+} 
 resource "aws_iam_role" "workernodes" {
   name = var.workerNodeIAM
 
