@@ -1,6 +1,6 @@
 # Capstone Project - Cohort 5 Group 4
 
-## Team members: Leon, Chun Ming CHEUNG, Jeremy
+## Team members: CHEONG Jia Hao (Leon), CHEUNG Chun Ming (Jeremy)
 
 ## Introduction
 The capstone project bases on the AWS Containers Retail Sample (https://www.eksworkshop.com/docs/introduction/getting-started/about). We deploy the application into AWS EKS (Amazon Elastic Kubernetes Service) which is a managed Kubernetes service provided by Amazon Web Services (AWS). It allows users to run Kubernetes, an open-source system for automating the deployment, scaling, and management of containerized applications, without needing to install, operate, and maintain their own Kubernetes control plane or nodes.
