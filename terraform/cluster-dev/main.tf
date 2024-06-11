@@ -102,6 +102,18 @@ resource "aws_iam_role_policy_attachment" "AmazonEBSCSIDriverPolicy" {
   role       = aws_iam_role.workernodes.name
 }
 
+resource "aws_launch_template" "eks_launch_template" {
+  name = "eks-launch-template"
+  //instance_type = "t2.micro"
+
+  tag_specifications {  
+    resource_type = "instance"
+    tags = {
+      Name = "ce5-group4-eks-worker-node-Dev"  # Specify the name tag for the worker nodes
+    }
+  }
+}
+
 resource "aws_eks_node_group" "worker-node-group" {
   cluster_name    = aws_eks_cluster.eks.name
   node_group_name = "workernodes-${var.environment}"
@@ -109,6 +121,10 @@ resource "aws_eks_node_group" "worker-node-group" {
   subnet_ids      = [var.pubsub1, var.pubsub2]
   instance_types = var.instanceType
 
+  launch_template {
+    name = aws_launch_template.eks_launch_template.name
+    version = "$Latest"
+  }
   scaling_config {
     desired_size = var.desired_size
     max_size     = var.max_size

@@ -133,7 +133,7 @@ resource "aws_launch_template" "eks_launch_template" {
   tag_specifications {  
     resource_type = "instance"
     tags = {
-      Name = "ce5-group4-eks-worker-node"  # Specify the name tag for the worker nodes
+      Name = "ce5-group4-eks-worker-node-Prod"  # Specify the name tag for the worker nodes
     }
   }
 }
