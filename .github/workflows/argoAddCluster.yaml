@@ -67,5 +67,13 @@ jobs:
         shell: bash
         run: argocd cluster list
 
-      # - name: Verify the deployment
-      #   run: helm list -n argocd
+      - name: Connect to EKS cluster 
+        run: aws eks --region $EKS_REGION update-kubeconfig --name group4devEKS
+
+      - name: Add argocd cluster
+        shell: bash
+        run: argocd cluster add arn:aws:eks:us-east-1:255945442255:cluster/group4devEKS --name dev-cluster
+
+      - name: List argocd clusters
+        shell: bash
+        run: argocd cluster list
