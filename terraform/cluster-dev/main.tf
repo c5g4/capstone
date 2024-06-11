@@ -103,7 +103,7 @@ resource "aws_iam_role_policy_attachment" "AmazonEBSCSIDriverPolicy" {
 }
 
 resource "aws_launch_template" "eks_launch_template" {
-  name = "eks-launch-template"
+  name = "eks-launch-template-dev"
   //instance_type = "t2.micro"
 
   tag_specifications {  
