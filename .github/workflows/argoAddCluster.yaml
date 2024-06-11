@@ -46,7 +46,15 @@ jobs:
           
       - name: Connect to EKS cluster 
         run: aws eks --region $EKS_REGION update-kubeconfig --name $EKS_CLUSTER
-      
+
+      - name: Install argocd
+        shell: bash
+        run: |
+          VERSION=$(curl -L -s https://raw.githubusercontent.com/argoproj/argo-cd/stable/VERSION)
+          curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/download/v$VERSION/argocd-linux-amd64
+          sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+          rm argocd-linux-amd64
+
       - name: Check argocd version
         shell: bash
         run: argocd version
