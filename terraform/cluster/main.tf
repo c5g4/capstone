@@ -52,11 +52,33 @@ resource "aws_eks_cluster" "eks" {
     subnet_ids = [var.pubsub1, var.pubsub2]
   }
 
+  // By Jeremy 2024-06-09
+  access_config {
+    authentication_mode                         = "API_AND_CONFIG_MAP"
+    bootstrap_cluster_creator_admin_permissions = true
+  }
+
   depends_on = [
     aws_iam_role.eks-iam-role,
   ]
 }
 
+// By Jeremy 2024-06-09
+resource "aws_eks_access_entry" "cmcheung001" {
+  cluster_name      = aws_eks_cluster.eks.name
+  principal_arn     = "arn:aws:iam::255945442255:user/cmcheung001"
+  type              = "STANDARD"
+}
+
+resource "aws_eks_access_policy_association" "cmcheung001" {
+  cluster_name      = aws_eks_cluster.eks.name
+  principal_arn     = "arn:aws:iam::255945442255:user/cmcheung001"
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+
+  access_scope {
+    type       = "cluster"
+  }
+} 
 resource "aws_iam_role" "workernodes" {
   name = var.workerNodeIAM
 
@@ -102,6 +124,23 @@ resource "aws_iam_role_policy_attachment" "AmazonEBSCSIDriverPolicy" {
   role       = aws_iam_role.workernodes.name
 }
 
+// By Jeremy 2024-06-09 - name the created EC2
+
+resource "aws_launch_template" "eks_launch_template" {
+  name = "eks-launch-template"
+  //instance_type = "t2.micro"
+
+  tag_specifications {  
+    resource_type = "instance"
+    tags = {
+      Name = "ce5-group4-eks-worker-node"  # Specify the name tag for the worker nodes
+    }
+  }
+}
+
+// By Jeremy 2024-06-09 - name the created EC2
+
+
 resource "aws_eks_node_group" "worker-node-group" {
   cluster_name    = aws_eks_cluster.eks.name
   node_group_name = "workernodes-${var.environment}"
@@ -109,6 +148,11 @@ resource "aws_eks_node_group" "worker-node-group" {
   subnet_ids      = [var.pubsub1, var.pubsub2]
   instance_types = var.instanceType
 
+  // By Jeremy 2024-06-09 - name the created EC2
+  launch_template {
+    name = aws_launch_template.eks_launch_template.name
+    version = "$Latest"
+  }
   scaling_config {
     desired_size = var.desired_size
     max_size     = var.max_size
