@@ -1,4 +1,4 @@
-name: 'Deploy ArgoCD App'
+name: 'Deploy ArgoCD App - Prod env'
 
 on:
   workflow_dispatch:
