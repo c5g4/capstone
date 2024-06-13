@@ -69,6 +69,19 @@ Overall Architecture:
 ![Architecture](/docs/images/catalog-microservice-002.png)
 
 
+## CI(GitHub) CD(ArgoCD) Flows
+
+EKS / ArgoDA CI
+
+![Screenshot](/docs/images/0001-capstone-infra.drawio.png)
+
+
+UI CI CD
+
+![Screenshot](/docs/images/0001-retail-store-app-ui.drawio.png)
+
+
+
 
 
 
