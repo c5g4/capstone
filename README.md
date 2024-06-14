@@ -21,11 +21,14 @@ GitHub:
 ECR:
 ![Screenshot](/docs/images/ECR001.png)
 
-### Use Case 2 - Site Reliability Engineering (SRE)
-5. Splunk monitoring is implemented.
 
 ### Use Case 3 - Security Focused (DevSecOps)
-6. Code vulnerability scanning and quality assurance are automated in CI by Snyk test (pom.xml), Snyk IAC, mvn checkstyle & mvn verify (https://github.com/c5g4/retail-store-app-ui.git)
+5. Code vulnerability scanning and quality assurance are automated in CI by Snyk test (pom.xml), Snyk IAC, mvn checkstyle & mvn verify (https://github.com/c5g4/retail-store-app-ui.git)
+
+
+## System Architecture
+![Architecture](/docs/images/architecture-0002.png)
+
 
 
 ## AWS Containers Retail Sample
@@ -43,6 +46,7 @@ It provides:
 **This project is intended for educational purposes only and not for production use.**
 
 ![Screenshot](/docs/images/screenshot.png)
+
 
 ## Application Architecture
 
@@ -79,6 +83,10 @@ EKS / ArgoDA CI
 UI CI CD
 
 ![Screenshot](/docs/images/0001-retail-store-app-ui.drawio.png)
+
+
+
+
 
 
 
