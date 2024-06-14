@@ -11,9 +11,11 @@ Additional features are added into the sample application for use cases
 
 ### Use Case 1 - Continuous Integration and Continuous Delivery (CI/CD) Pipeline (DevOps)
 1. 3 GitHub repositories are created and maintained for version control & CICD pipelines (https://github.com/c5g4?tab=repositories)
-2. EKS deployment is done Terraform (https://github.com/c5g4/capstone.git) as Infrastructure as Code (IaC)
-3. UI module development is done via CI pipeline by GitHub Action (https://github.com/c5g4/retail-store-app-ui.git)
-4. UI module deployment is done via CD pipeline by ArgoCD (https://github.com/c5g4/retail-config.git) into AWS ECR (Amazon Elastic Container Registry)
+2. The 1st Capstone Repository (https://github.com/c5g4/capstone.git) is for creating PROD and DEV AWS EKS clusters via Terraform as Infrastructure as Code (IaC)
+3. The ArgoCD application will be deployed into PRO cluster via Capstone Repository manual worflow
+4. The eCommerce Retail application will be deployed via the ArgoCD application into PROD and DEV clusters respectively (triggered by Capstone Repository manual worflow)
+5. The UI module docker image is deployed into AWS ECR (Amazon Elastic Container Registry) by the CI pipeline of GitHub Action (https://github.com/c5g4/retail-store-app-ui.git)
+6. The UI module delivery into DEV / PROD cluster is automatically done via CD pipeline of ArgoCD (https://github.com/c5g4/retail-config.git)
 
 GitHub:
 ![Screenshot](/docs/images/MainRepo001.png)
@@ -23,7 +25,7 @@ ECR:
 
 
 ### Use Case 3 - Security Focused (DevSecOps)
-5. Code vulnerability scanning and quality assurance are automated in CI by Snyk test (pom.xml), Snyk IAC, mvn checkstyle & mvn verify (https://github.com/c5g4/retail-store-app-ui.git)
+7. Code vulnerability scanning and quality assurance are automated in CI by Snyk test (pom.xml), Snyk IAC, mvn checkstyle & mvn verify (https://github.com/c5g4/retail-store-app-ui.git)
 
 
 ## System Architecture
